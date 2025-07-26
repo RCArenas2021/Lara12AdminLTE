@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Controlador para operaciones CRUD de usuarios.
+ *
+ * Última modificación: 26-07-2025 por ChatGPT
+ */
+
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;

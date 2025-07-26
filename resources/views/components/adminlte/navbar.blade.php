@@ -1,3 +1,5 @@
+<!-- Componente Navbar -->
+<!-- Última modificación: 26-07-2025 por ChatGPT -->
 <!--begin::Header - Barra de navegación superior-->
 <nav class="app-header navbar navbar-expand bg-body">
     <!--begin::Container - Contenedor principal del navbar-->

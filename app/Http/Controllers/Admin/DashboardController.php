@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Controlador para el panel de administración.
+ *
+ * Última modificación: 26-07-2025 por ChatGPT
+ */
+
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;

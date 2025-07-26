@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Rutas web de la aplicación.
+ *
+ * Última modificación: 26-07-2025 por ChatGPT
+ */
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UserController;

@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Modelo de usuario del sistema.
+ *
+ * Ultima modificación: 26-07-2025 por ChatGPT
+ */
+
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -13,7 +19,7 @@ class User extends Authenticatable
     use HasFactory, Notifiable;
 
     /**
-     * The attributes that are mass assignable.
+     * Atributos que se pueden asignar en masa.
      *
      * @var list<string>
      */
@@ -24,7 +30,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be hidden for serialization.
+     * Atributos que deben permanecer ocultos al serializarse.
      *
      * @var list<string>
      */
@@ -34,7 +40,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * Get the attributes that should be cast.
+     * Obtiene los atributos que deben convertirse de tipo.
      *
      * @return array<string, string>
      */

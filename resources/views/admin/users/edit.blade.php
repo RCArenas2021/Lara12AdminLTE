@@ -1,3 +1,5 @@
+{{-- Formulario para editar usuario --}}
+{{-- Última modificación: 26-07-2025 por ChatGPT --}}
 @extends('layouts.adminlte')
 
 @section('title', 'Editar Usuario')

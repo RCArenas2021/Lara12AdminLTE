@@ -1,3 +1,5 @@
+{{-- Configuración general del sistema --}}
+{{-- Última modificación: 26-07-2025 por ChatGPT --}}
 @extends('layouts.adminlte')
 @section('title', 'Configuraciones')
 @section('content_header')

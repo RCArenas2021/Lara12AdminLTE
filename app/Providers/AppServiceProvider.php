@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Proveedor de servicios principal de la aplicación.
+ *
+ * Última modificación: 26-07-2025 por ChatGPT
+ */
+
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;

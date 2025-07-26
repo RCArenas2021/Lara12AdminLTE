@@ -1,3 +1,5 @@
+<!-- Plantilla AdminLTE principal -->
+<!-- Última modificación: 26-07-2025 por ChatGPT -->
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <!--begin::Head-->
