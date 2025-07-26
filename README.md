@@ -7,6 +7,16 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Proyecto AdminLTE
+
+Esta aplicación integra **Laravel 12** con la plantilla **AdminLTE 4**. Los archivos vacíos del repositorio fueron completados con contenido básico para que la interfaz funcione correctamente:
+
+- `resources/views/layouts/app.blade.php` y `resources/views/layouts/guest.blade.php` proporcionan estructuras de página mínimas.
+- `public/assets/css/app.css` y `public/assets/js/app.js` se utilizan para estilos y scripts personalizados.
+- Se añadió una ruta de inicio en `routes/web.php` que muestra la vista `welcome`.
+
+Ejecute `composer install` y `npm install` para instalar las dependencias y `composer test` para ejecutar la suite de pruebas.
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:

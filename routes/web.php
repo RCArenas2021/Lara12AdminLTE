@@ -5,7 +5,8 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\SettingsController;
 
-// Ruta de inicio que muestra la vista de bienvenida
+
+// Ruta principal de la aplicación
 Route::get('/', function () {
     return view('welcome');
 });
