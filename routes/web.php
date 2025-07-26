@@ -10,9 +10,10 @@ use App\Http\Controllers\Admin\SettingsController;
 | Rutas del Panel de Administración
 |--------------------------------------------------------------------------
 |
-| Aquí se definen todas las rutas para el panel de administración AdminLTE.
-| Todas las rutas están protegidas por middleware de autenticación y 
-| tienen el prefijo 'admin' y el name 'admin.'
+| Aquí se definen las rutas principales del panel de administración AdminLTE.
+| Las rutas dentro de este grupo están protegidas por middleware de
+| autenticación, llevan el prefijo 'admin' y el name 'admin.'.
+| Más abajo se añaden algunas rutas públicas relacionadas con el panel.
 |
 */
 
