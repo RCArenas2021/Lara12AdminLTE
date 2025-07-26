@@ -386,3 +386,6 @@ Route::post('/admin/request-access', function () {
     // Lógica para procesar solicitud de acceso
     return redirect()->back()->with('success', 'Solicitud de acceso enviada correctamente.');
 })->name('admin.public.request-access.submit');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
