@@ -5,6 +5,11 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\SettingsController;
 
+// Ruta de bienvenida
+Route::get('/', function () {
+    return view('welcome');
+})->name('welcome');
+
 /*
 |--------------------------------------------------------------------------
 | Rutas del Panel de Administración
