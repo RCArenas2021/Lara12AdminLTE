@@ -4,11 +4,31 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\SettingsController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 
 
 // Ruta principal de la aplicación
 Route::get('/', function () {
     return view('welcome');
+});
+
+// Autenticación básica
+Route::get('/login', [LoginController::class, 'create'])->name('login');
+Route::post('/login', [LoginController::class, 'store']);
+Route::post('/logout', [LoginController::class, 'destroy'])->name('logout');
+
+Route::get('/forgot-password', [ForgotPasswordController::class, 'create'])->name('password.request');
+Route::post('/forgot-password', [ForgotPasswordController::class, 'store'])->name('password.email');
+Route::get('/reset-password/{token}', [ResetPasswordController::class, 'create'])->name('password.reset');
+Route::post('/reset-password', [ResetPasswordController::class, 'store'])->name('password.update');
+
+// Registro solo accesible para usuarios autenticados (administradores)
+Route::middleware('auth')->group(function () {
+    Route::get('/register', [RegisterController::class, 'create'])->name('register');
+    Route::post('/register', [RegisterController::class, 'store']);
 });
 
 /*
