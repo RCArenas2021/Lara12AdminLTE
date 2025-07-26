@@ -1,3 +1,5 @@
+{{-- Vista alternativa del dashboard (v2) --}}
+{{-- Última modificación: 26-07-2025 por ChatGPT --}}
 @extends('layouts.adminlte')
 
 @section('title', 'Dashboard V2')

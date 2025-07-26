@@ -1,3 +1,5 @@
+<!-- Layout principal de la aplicación -->
+<!-- Última modificación: 26-07-2025 por ChatGPT -->
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>

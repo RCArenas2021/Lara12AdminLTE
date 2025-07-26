@@ -1,3 +1,5 @@
+{{-- Detalle de usuario --}}
+{{-- Última modificación: 26-07-2025 por ChatGPT --}}
 @extends('layouts.adminlte')
 
 @section('title', 'Detalle Usuario')

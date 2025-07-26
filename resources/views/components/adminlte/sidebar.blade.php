@@ -1,3 +1,5 @@
+<!-- Componente Sidebar -->
+<!-- Última modificación: 26-07-2025 por ChatGPT -->
 <!--begin::Sidebar-->
 <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
     <!--begin::Sidebar Brand-->

@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Seeder principal de la base de datos.
+ *
+ * Última modificación: 26-07-2025 por ChatGPT
+ */
+
 namespace Database\Seeders;
 
 use App\Models\User;
@@ -9,7 +15,7 @@ use Illuminate\Database\Seeder;
 class DatabaseSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Poblar la base de datos de la aplicación.
      */
     public function run(): void
     {
