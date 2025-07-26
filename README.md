@@ -15,6 +15,12 @@ Esta aplicación integra **Laravel 12** con la plantilla **AdminLTE 4**. Los arc
 - `public/assets/css/app.css` y `public/assets/js/app.js` se utilizan para estilos y scripts personalizados.
 - Se añadió una ruta de inicio en `routes/web.php` que muestra la vista `welcome`.
 
+### Roles y permisos
+
+Este proyecto incorpora el paquete [spatie/laravel-permission](https://github.com/spatie/laravel-permission) para gestionar roles y permisos. El seeder predeterminado crea los roles `admin` y `user` y asigna el rol adecuado a los usuarios de ejemplo. El acceso al panel de administración utiliza el middleware `role:admin`.
+
+Para la autenticación se instaló **laravel/ui** y la herramienta de depuración **laravel-debugbar**.
+
 Ejecute `composer install` y `npm install` para instalar las dependencias y `composer test` para ejecutar la suite de pruebas.
 
 ## About Laravel
