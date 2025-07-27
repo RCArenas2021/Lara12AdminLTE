@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
  * Modelo que representa los permisos de acceso a cada tabla.
@@ -10,10 +11,12 @@ use Illuminate\Database\Eloquent\Model;
  */
 class TablePermission extends Model
 {
+    use HasFactory;
+
     /**
      * Atributos asignables de manera masiva.
      */
-    protected $fillable = [
+    protected array $fillable = [
         'table_name',
         'role_id',
         'can_view',
