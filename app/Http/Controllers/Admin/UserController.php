@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 use Illuminate\Http\Request;
 
 /**
@@ -34,10 +36,10 @@ class UserController extends Controller
     /**
      * Guarda un nuevo usuario en la base de datos.
      */
-    public function store(Request $request)
+    public function store(StoreUserRequest $request)
     {
-        // Validar y crear usuario
-        // User::create($request->all());
+        // Crear usuario con datos validados
+        // User::create($request->validated());
         return redirect()->route('admin.users.index');
     }
 
@@ -60,9 +62,9 @@ class UserController extends Controller
     /**
      * Actualiza la información del usuario en la base de datos.
      */
-    public function update(Request $request, User $user)
+    public function update(UpdateUserRequest $request, User $user)
     {
-        // $user->update($request->all());
+        // $user->update($request->validated());
         return redirect()->route('admin.users.index');
     }
 
