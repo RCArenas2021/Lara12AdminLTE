@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\SettingsController;
+use App\Http\Controllers\Admin\DynamicCrudController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
@@ -305,6 +306,21 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
         Route::get('/{project}', function ($project) {
             return view('admin.projects.show', compact('project'));
         })->name('show');
+    });
+
+    /*
+    |--------------------------------------------------------------------------
+    | Módulo CRUD Dinámico
+    |--------------------------------------------------------------------------
+    */
+    Route::prefix('tables')->name('dynamic-crud.')->group(function () {
+        Route::get('/', [DynamicCrudController::class, 'index'])->name('index');
+        Route::get('/{table}', [DynamicCrudController::class, 'show'])->name('show');
+        Route::get('/{table}/create', [DynamicCrudController::class, 'create'])->name('create');
+        Route::post('/{table}', [DynamicCrudController::class, 'store'])->name('store');
+        Route::get('/{table}/{id}/edit', [DynamicCrudController::class, 'edit'])->name('edit');
+        Route::put('/{table}/{id}', [DynamicCrudController::class, 'update'])->name('update');
+        Route::delete('/{table}/{id}', [DynamicCrudController::class, 'destroy'])->name('destroy');
     });
     
     /*
