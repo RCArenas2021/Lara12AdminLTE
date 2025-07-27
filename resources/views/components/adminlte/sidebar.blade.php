@@ -36,14 +36,14 @@
                     Actualizado: 2025-07-27
                 --}}
                 @foreach(config('menu.admin') as $item)
-                    @can($item['permission'])
+                    @if($item['permission'] === null || auth()->user()?->can($item['permission']))
                         <li class="nav-item">
                             <a href="{{ route($item['route']) }}" class="nav-link {{ request()->routeIs($item['route']) ? 'active' : '' }}">
                                 <i class="nav-icon {{ $item['icon'] }}"></i>
                                 <p>{{ $item['title'] }}</p>
                             </a>
                         </li>
-                    @endcan
+                    @endif
                 @endforeach
             </ul>
             <!--end::Sidebar Menu-->

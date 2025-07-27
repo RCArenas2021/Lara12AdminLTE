@@ -173,6 +173,7 @@ Actualmente se cuenta con:
 - Menú lateral dinámico basado en permisos (`config/menu.php`).
 - Gestión de roles y permisos con *Spatie Laravel Permission*.
 - Bitácora de actividad para auditoría accesible solo por `super-admin` o `compliance`.
+- CRUD básico de usuarios con asignación de roles.
 
 ### 📚 Acerca de Laravel
 
