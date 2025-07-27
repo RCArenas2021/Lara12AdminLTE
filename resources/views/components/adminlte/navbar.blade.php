@@ -1,4 +1,5 @@
 <!--begin::Header - Barra de navegación superior-->
+{{-- Componente reusable de barra de navegación --}}
 <nav class="app-header navbar navbar-expand bg-body">
     <!--begin::Container - Contenedor principal del navbar-->
     <div class="container-fluid">
@@ -206,3 +207,4 @@
     <!--end::Container-->
 </nav>
 <!--end::Header-->
+{{-- Fin del componente Navbar --}}

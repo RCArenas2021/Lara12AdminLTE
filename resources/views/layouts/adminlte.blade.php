@@ -1,4 +1,5 @@
 <!doctype html>
+{{-- Layout principal con AdminLTE integrado --}}
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <!--begin::Head-->
 <head>
@@ -68,11 +69,13 @@
     <div class="app-wrapper">
         
         <!--begin::Header-->
-        @include('components.adminlte.navbar')
+        {{-- Utilizamos el componente para facilitar su reutilización --}}
+        <x-admin-l-t-e-navbar />
         <!--end::Header-->
         
         <!--begin::Sidebar-->
-        @include('components.adminlte.sidebar')
+        {{-- Componente de menú lateral modular --}}
+        <x-admin-l-t-e-sidebar />
         <!--end::Sidebar-->
         
         <!--begin::App Main-->
