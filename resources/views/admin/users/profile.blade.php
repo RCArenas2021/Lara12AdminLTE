@@ -5,5 +5,6 @@
     <h1>User Profile</h1>
     <p>Name: {{ $user->name }}</p>
     <p>Email: {{ $user->email }}</p>
+    <p>Rol: {{ $user->roles->pluck('name')->implode(', ') }}</p>
 </div>
 @endsection

@@ -7,6 +7,10 @@
 @endsection
 
 @section('content')
-    <p>Detalle del usuario: {{ $user->name ?? 'N/A' }}.</p>
+    <ul>
+        <li><strong>Nombre:</strong> {{ $user->name }}</li>
+        <li><strong>Email:</strong> {{ $user->email }}</li>
+        <li><strong>Rol:</strong> {{ $user->roles->pluck('name')->implode(', ') }}</li>
+    </ul>
 @endsection
 

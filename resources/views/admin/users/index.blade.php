@@ -4,5 +4,22 @@
     Lista de usuarios
 @endsection
 @section('content')
-    <p>Aquí se mostrará el listado de usuarios.</p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Rol</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($users as $user)
+                <tr>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->roles->pluck('name')->implode(', ') }}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 @endsection

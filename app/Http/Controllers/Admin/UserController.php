@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Role;
 
 /**
  * Controlador para la gestión de usuarios del panel administrativo.
@@ -18,9 +20,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        // Aquí iría la lógica para obtener usuarios de la base de datos
-        // y pasarlos a la vista.
-        return view('admin.users.index');
+        // Listamos usuarios junto con sus roles
+        $users = User::with('roles')->get();
+
+        return view('admin.users.index', compact('users'));
     }
 
     /**
@@ -28,7 +31,10 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.users.create');
+        // Pasamos lista de roles disponibles a la vista
+        $roles = Role::pluck('name', 'id');
+
+        return view('admin.users.create', compact('roles'));
     }
 
     /**
@@ -36,8 +42,22 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        // Validar y crear usuario
-        // User::create($request->all());
+        // Validamos los datos recibidos
+        $data = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|string|confirmed',
+            'role' => 'required|exists:roles,name',
+        ]);
+
+        // Creamos el usuario y asignamos el rol indicado
+        $user = User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
+        $user->assignRole($data['role']);
+
         return redirect()->route('admin.users.index');
     }
 
@@ -54,7 +74,10 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('admin.users.edit', compact('user'));
+        // Roles disponibles para asignar
+        $roles = Role::pluck('name', 'id');
+
+        return view('admin.users.edit', compact('user', 'roles'));
     }
 
     /**
@@ -62,7 +85,25 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        // $user->update($request->all());
+        // Validamos datos
+        $data = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email,' . $user->id,
+            'password' => 'nullable|string|confirmed',
+            'role' => 'required|exists:roles,name',
+        ]);
+
+        // Actualizamos atributos básicos
+        $user->name = $data['name'];
+        $user->email = $data['email'];
+        if (!empty($data['password'])) {
+            $user->password = Hash::make($data['password']);
+        }
+        $user->save();
+
+        // Sincronizamos el rol
+        $user->syncRoles([$data['role']]);
+
         return redirect()->route('admin.users.index');
     }
 
@@ -71,7 +112,9 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        // $user->delete();
+        // Eliminamos el usuario de la base de datos
+        $user->delete();
+
         return redirect()->route('admin.users.index');
     }
 
