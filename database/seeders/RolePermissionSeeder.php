@@ -13,7 +13,7 @@ class RolePermissionSeeder extends Seeder
 {
     public function run(): void
     {
-        $permissions = ['manage users', 'view logs'];
+        $permissions = ['manage users', 'view logs', 'manage settings'];
         foreach ($permissions as $perm) {
             Permission::firstOrCreate(['name' => $perm]);
         }
@@ -24,7 +24,7 @@ class RolePermissionSeeder extends Seeder
         $user = Role::firstOrCreate(['name' => 'user']);
 
         $super->syncPermissions($permissions);
-        $admin->syncPermissions(['manage users']);
+        $admin->syncPermissions(['manage users', 'manage settings']);
         $compliance->syncPermissions(['view logs']);
     }
 }

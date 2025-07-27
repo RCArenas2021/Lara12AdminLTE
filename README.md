@@ -32,12 +32,15 @@ Esta aplicación es un **sistema de administración completo** que integra **Lar
 
 #### **Modelos y Base de Datos**
 - **Modelo User** con roles y permisos
+- **Modelo Setting** para configuraciones del sistema
 - **Migraciones**:
   - `create_users_table`: Tabla principal de usuarios
+  - `create_settings_table`: Configuraciones generales
   - `add_role_to_users_table`: Sistema de roles integrado
   - Sesiones y tokens de recuperación de contraseña
 - **Seeders**:
   - `UserSeeder`: Usuarios por defecto (admin y usuario estándar)
+  - `SettingSeeder`: Valores base de configuración
   - `DatabaseSeeder`: Configuración inicial de la base de datos
 
 #### **Vistas y Componentes**

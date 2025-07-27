@@ -26,8 +26,8 @@ class UserRolesTest extends TestCase
         $response = $this->post(route('admin.users.store'), [
             'name' => 'Usuario Prueba',
             'email' => 'test@example.com',
-            'password' => 'secret',
-            'password_confirmation' => 'secret',
+            'password' => 'secretpwd',
+            'password_confirmation' => 'secretpwd',
             'role' => 'admin',
         ]);
 

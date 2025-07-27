@@ -23,5 +23,11 @@ return [
             'route' => 'admin.logs.index',
             'permission' => 'view logs',
         ],
+        [
+            'title' => 'Configuración',
+            'icon' => 'bi bi-gear',
+            'route' => 'admin.settings.index',
+            'permission' => 'manage settings',
+        ],
     ],
 ];

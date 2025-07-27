@@ -18,5 +18,8 @@ class DatabaseSeeder extends Seeder
 
         // Ejecutar seeder de usuarios con roles
         $this->call(UserSeeder::class);
+
+        // Valores de configuración por defecto
+        $this->call(SettingSeeder::class);
     }
 }

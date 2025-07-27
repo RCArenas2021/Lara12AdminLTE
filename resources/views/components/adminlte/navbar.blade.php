@@ -153,7 +153,7 @@
                              class="rounded-circle shadow" 
                              alt="Imagen de Usuario">
                         <p>
-                            {{ Auth::user()->name ?? 'Usuario' }} - {{ Auth::user()->role ?? 'Administrador' }}
+                            {{ Auth::user()->name ?? 'Usuario' }} - {{ Auth::user()->roles->pluck('name')->implode(', ') ?: 'Administrador' }}
                             <small>Miembro desde {{ Auth::user()->created_at ? Auth::user()->created_at->format('M. Y') : 'Nov. 2023' }}</small>
                         </p>
                     </li>

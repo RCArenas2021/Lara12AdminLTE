@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Setting;
 
 /**
  * Controlador encargado de la configuración general del sistema.
@@ -15,7 +16,8 @@ class SettingsController extends Controller
      */
     public function index()
     {
-        return view('admin.settings.index');
+        $settings = Setting::all()->pluck('value', 'key');
+        return view('admin.settings.index', compact('settings'));
     }
 
     public function general()
@@ -40,7 +42,10 @@ class SettingsController extends Controller
 
     public function updateGeneral(Request $request)
     {
-        return redirect()->back();
+        foreach ($request->only(['site_name', 'maintenance_mode']) as $key => $value) {
+            Setting::updateOrCreate(['key' => $key], ['value' => $value]);
+        }
+        return redirect()->back()->with('status', 'Configuración actualizada');
     }
 
     public function updateSecurity(Request $request)

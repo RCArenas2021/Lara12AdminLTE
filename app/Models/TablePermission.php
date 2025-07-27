@@ -16,7 +16,7 @@ class TablePermission extends Model
     /**
      * Atributos asignables de manera masiva.
      */
-    protected array $fillable = [
+    protected $fillable = [
         'table_name',
         'role_id',
         'can_view',
