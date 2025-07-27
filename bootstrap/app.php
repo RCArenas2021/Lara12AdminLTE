@@ -11,8 +11,8 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        // Aquí puedes registrar middlewares personalizados
     })
     ->withExceptions(function (Exceptions $exceptions): void {
-        //
+        // Aquí puedes manejar las excepciones de la aplicación
     })->create();
