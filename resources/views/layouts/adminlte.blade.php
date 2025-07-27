@@ -22,10 +22,10 @@
     
     <!--begin::Accessibility Features-->
     <meta name="supported-color-schemes" content="light dark" />
-    <link rel="preload" href="{{ asset('adminlte/css/adminlte.css') }}" as="style" />
+    <link rel="preload" href="{{ asset('assets/css/adminlte.css') }}" as="style" />
     <!--end::Accessibility Features-->
     
-    <!--begin::Fonts-->
+    <!--begin::Fonts--> 
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css"
@@ -53,7 +53,7 @@
     <!--end::Third Party Plugin(Bootstrap Icons)-->
     
     <!--begin::Required Plugin(AdminLTE)-->
-    <link rel="stylesheet" href="{{ asset('adminlte/css/adminlte.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/adminlte.css') }}" />
     <!--end::Required Plugin(AdminLTE)-->
     
     <!-- Estilos personalizados -->
@@ -144,7 +144,7 @@
     <!--end::Required Plugin(Bootstrap 5)-->
     
     <!--begin::Required Plugin(AdminLTE)-->
-    <script src="{{ asset('adminlte/js/adminlte.js') }}"></script>
+    <script src="{{ asset('assets/js/adminlte.js') }}"></script>
     <!--end::Required Plugin(AdminLTE)-->
     
     <!--begin::OverlayScrollbars Configure-->
