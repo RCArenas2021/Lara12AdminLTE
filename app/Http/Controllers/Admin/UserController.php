@@ -74,4 +74,40 @@ class UserController extends Controller
         // $user->delete();
         return redirect()->route('admin.users.index');
     }
+
+    /**
+     * Activa un usuario (ejemplo básico).
+     */
+    public function activate(User $user)
+    {
+        // $user->update(['active' => true]);
+        return redirect()->route('admin.users.index');
+    }
+
+    /**
+     * Desactiva un usuario.
+     */
+    public function deactivate(User $user)
+    {
+        // $user->update(['active' => false]);
+        return redirect()->route('admin.users.index');
+    }
+
+    /**
+     * Muestra el perfil de un usuario.
+     */
+    public function profile(User $user)
+    {
+        return view('admin.users.profile', compact('user'));
+    }
+
+    /**
+     * Búsqueda básica de usuarios para AJAX.
+     */
+    public function search(Request $request)
+    {
+        $query = $request->get('q');
+        $users = User::where('name', 'like', "%{$query}%")->get();
+        return response()->json($users);
+    }
 }

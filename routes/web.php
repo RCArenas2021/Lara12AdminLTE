@@ -402,6 +402,9 @@ Route::post('/admin/request-access', function () {
     // Lógica para procesar solicitud de acceso
     return redirect()->back()->with('success', 'Solicitud de acceso enviada correctamente.');
 })->name('admin.public.request-access.submit');
+
+// Perfil del usuario autenticado
+Route::middleware('auth')->get('/profile', [App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

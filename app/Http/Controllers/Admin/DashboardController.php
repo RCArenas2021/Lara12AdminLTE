@@ -35,4 +35,26 @@ class DashboardController extends Controller
     {
         return view('admin.dashboard-v3');
     }
+
+    /**
+     * Devuelve estadísticas simples para el dashboard.
+     */
+    public function getStats()
+    {
+        return response()->json([
+            'users' => 10,
+            'sales' => 5,
+        ]);
+    }
+
+    /**
+     * Devuelve datos de ejemplo para gráficos.
+     */
+    public function getChartData()
+    {
+        return response()->json([
+            'labels' => ['Jan', 'Feb', 'Mar'],
+            'data' => [1, 2, 3],
+        ]);
+    }
 }
