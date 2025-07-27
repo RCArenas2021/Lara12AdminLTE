@@ -99,9 +99,7 @@ php artisan db:seed
 ```
 
 6. **Compilar assets**:
-```bash
-npm run dev
-```
+Los estilos y scripts ya se encuentran en `public/assets`, por lo que no es necesario ejecutar `npm run dev`. Puedes optar por Laravel Mix u otra herramienta.
 
 7. **Iniciar el servidor**:
 ```bash
