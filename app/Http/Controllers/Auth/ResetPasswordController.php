@@ -9,19 +9,21 @@ class ResetPasswordController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
-    | Password Reset Controller
+    | Controlador para Restablecer Contraseñas
     |--------------------------------------------------------------------------
     |
-    | This controller is responsible for handling password reset requests
-    | and uses a simple trait to include this behavior. You're free to
-    | explore this trait and override any methods you wish to tweak.
+    | Este controlador se encarga de procesar las solicitudes de
+    | restablecimiento de contraseña y utiliza un trait para incluir este
+    | comportamiento. Puedes explorar el trait y sobreescribir los métodos
+    | que necesites ajustar.
     |
     */
 
     use ResetsPasswords;
 
     /**
-     * Where to redirect users after resetting their password.
+     * Ruta a la que se redirige a los usuarios después de restablecer su
+     * contraseña.
      *
      * @var string
      */

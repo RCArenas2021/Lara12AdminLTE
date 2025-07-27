@@ -9,7 +9,7 @@ use Illuminate\View\Component;
 class Sidebar extends Component
 {
     /**
-     * Create a new component instance.
+     * Crea una nueva instancia del componente.
      */
     public function __construct()
     {
@@ -17,7 +17,7 @@ class Sidebar extends Component
     }
 
     /**
-     * Get the view / contents that represent the component.
+     * Obtiene la vista o contenido que representa el componente.
      */
     public function render(): View|Closure|string
     {
