@@ -11,7 +11,11 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        // Aquí puedes registrar middlewares personalizados
+        // Registrar middleware personalizado de actividad
+        $middleware->alias([
+            'activity' => \App\Http\Middleware\LogActivity::class,
+        ]);
+        $middleware->appendToGroup('web', 'activity');
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         // Aquí puedes manejar las excepciones de la aplicación

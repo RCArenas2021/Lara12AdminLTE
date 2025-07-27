@@ -167,6 +167,13 @@ Ejecutar pruebas con cobertura:
 php artisan test --coverage
 ```
 
+### Estado del Proyecto
+
+Actualmente se cuenta con:
+- Menú lateral dinámico basado en permisos (`config/menu.php`).
+- Gestión de roles y permisos con *Spatie Laravel Permission*.
+- Bitácora de actividad para auditoría accesible solo por `super-admin` o `compliance`.
+
 ### 📚 Acerca de Laravel
 
 Laravel es un framework de aplicaciones web con una sintaxis expresiva y elegante. Creemos que el desarrollo debe ser una experiencia agradable y creativa para ser verdaderamente satisfactorio. Laravel elimina el dolor del desarrollo facilitando tareas comunes utilizadas en muchos proyectos web, tales como:

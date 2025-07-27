@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\DynamicCrudController;
+use App\Http\Controllers\Admin\ActivityLogController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
@@ -306,6 +307,11 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
         Route::get('/{project}', function ($project) {
             return view('admin.projects.show', compact('project'));
         })->name('show');
+    });
+
+    // Bitácora de actividad (solo super admin o compliance)
+    Route::prefix('logs')->name('logs.')->middleware('role:super-admin|compliance')->group(function () {
+        Route::get('/', [ActivityLogController::class, 'index'])->name('index');
     });
 
     /*
