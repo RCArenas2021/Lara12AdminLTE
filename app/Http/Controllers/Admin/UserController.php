@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
@@ -40,7 +42,7 @@ class UserController extends Controller
     /**
      * Guarda un nuevo usuario en la base de datos.
      */
-    public function store(Request $request)
+    public function store(StoreUserRequest $request)
     {
         // Validamos los datos recibidos
         $data = $request->validate([
@@ -83,7 +85,7 @@ class UserController extends Controller
     /**
      * Actualiza la información del usuario en la base de datos.
      */
-    public function update(Request $request, User $user)
+    public function update(UpdateUserRequest $request, User $user)
     {
         // Validamos datos
         $data = $request->validate([
@@ -99,11 +101,13 @@ class UserController extends Controller
         if (!empty($data['password'])) {
             $user->password = Hash::make($data['password']);
         }
+        //$user->update($request->validated());
         $user->save();
 
         // Sincronizamos el rol
         $user->syncRoles([$data['role']]);
 
+        // Redirigimos al listado de usuarios
         return redirect()->route('admin.users.index');
     }
 

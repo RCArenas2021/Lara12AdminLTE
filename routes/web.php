@@ -311,7 +311,7 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
 
     // Bitácora de actividad (solo super admin o compliance)
     Route::prefix('logs')->name('logs.')->middleware('role:super-admin|compliance')->group(function () {
-        Route::get('/', [ActivityLogController::class, 'index'])->name('index');
+        Route::get('/', ActivityLogController::class)->name('index');
     });
 
     /*
