@@ -2,6 +2,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
  * Registro de actividades de usuarios
@@ -9,7 +10,9 @@ use Illuminate\Database\Eloquent\Model;
  */
 class ActivityLog extends Model
 {
-    protected $fillable = [
+    use HasFactory;
+
+    protected array $fillable = [
         'user_id',
         'method',
         'url',
