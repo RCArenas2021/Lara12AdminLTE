@@ -1,4 +1,5 @@
 <!--begin::Sidebar-->
+{{-- Componente reusable de barra lateral --}}
 <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
     <!--begin::Sidebar Brand-->
     <div class="sidebar-brand">
@@ -52,3 +53,4 @@
     <!--end::Sidebar Wrapper-->
 </aside>
 <!--end::Sidebar-->
+{{-- Fin del componente Sidebar --}}
